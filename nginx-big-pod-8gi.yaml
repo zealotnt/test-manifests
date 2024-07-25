@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    resources:
+      requests:
+        cpu: 1
+        memory: "8Gi"
+      limits:
+        cpu: 1
+        memory: "8Gi"
+    ports:
+    - containerPort: 80
+  nodeSelector:
+    node.kubernetes.io/role: system
+  tolerations:
+  - key: node.kubernetes.io/role
+    operator: Equal
+    value: system
+    effect: NoSchedule
+
