@@ -40,7 +40,7 @@ spec:
           value: system
           effect: NoSchedule
   limits:
-    cpu: "1000"
+    cpu: 1000
     memory: 1000Gi
   disruption:
     consolidationPolicy: WhenUnderutilized
